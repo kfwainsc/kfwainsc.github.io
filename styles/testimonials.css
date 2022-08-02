@@ -1,5 +1,11 @@
 /* TESTIMONIALS.CSS */
-
+nav {
+  z-index: 1;
+}
+main {
+  z-index: 2;
+}
+/****** GRID of QUOTES ************/
 blockquote {
   display: flex;
   flex-direction: column;
@@ -15,7 +21,6 @@ blockquote {
   margin: 2rem 2rem;
   position: relative;
   gap: 2rem;
-  grid-template-columns: auto auto auto;
   grid-template: repeat(2, 1fr) / repeat(2, 1fr);
 }
 span {
@@ -35,7 +40,6 @@ span {
 .quote-line {
   line-height: 2rem;
 }
-
 @media only screen and (max-width: 480px) {
   .grid {
     grid-template: repeat(1, 1fr) / repeat(1, 1fr);

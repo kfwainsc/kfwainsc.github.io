@@ -57,6 +57,7 @@ nav {
   position: fixed;
   width: 100%;
   top: 0;
+  border-bottom: 0.25rem double lightgray;
   background-color: antiquewhite;
 }
 .nav {
@@ -191,6 +192,7 @@ footer {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  border-top: 0.25rem double lightgray;
   background-color: antiquewhite;
 }
 footer h4 {

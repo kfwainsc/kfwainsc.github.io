@@ -1,0 +1,7 @@
+/* CONTACTS.CSS */
+nav {
+  z-index: 1;
+}
+main {
+  z-index: 2;
+}

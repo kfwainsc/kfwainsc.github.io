@@ -1,0 +1,38 @@
+/* ABOUT.CSS */
+nav {
+  z-index: 1;
+}
+main {
+  z-index: 2;
+}
+img {
+  max-width: 90%;
+  border-radius: 25%;
+  border: 0.5rem double lightgray;
+}
+img:hover {
+  max-width: 110%;
+  border: 0.5rem dashed darkgrey;
+}
+.grid-about {
+  display: grid;
+  margin: 2rem 2rem;
+  position: relative;
+  gap: 1rem 2rem;
+  align-items: center;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+}
+p {
+  line-height: 1.5rem;
+}
+p::first-letter {
+  font-size: 1.5rem;
+}
+@media only screen and (max-width: 480px) {
+  .grid-about {
+    grid-template: repeat(6, 1fr) / repeat(2, 1fr);
+  }
+  .hide-mobile {
+    display: none;
+  }
+}
