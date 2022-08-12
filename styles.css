@@ -6,6 +6,7 @@
 html {
   font-size: 16px;
   font-family: Verdana, Helvetica, sans-serif;
+  /*font-family: Arial, sans-serif;*/
 }
 @media only screen and (max-width: 480px) {
   html {
@@ -29,6 +30,7 @@ nav {
   top: 0;
   border-bottom: 0.3rem solid lightgray;
   background-color: black;
+  z-index: 1;
 }
 .nav-bar {
   display: flex;
@@ -66,15 +68,26 @@ nav {
     margin-top: 5%;
   }
 }*/
-*/
+
 /*********** PROJECTS GRID ************/
+#featured {
+  display: block;
+  margin: 4rem 0;
+}
+#featured h2 {
+  font-family: Arial, sans-serif;
+  font-size: 1.5rem;
+  text-align: center;
+  font-style: italic;
+  letter-spacing: 1rem;
+}
 fig {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
 }
-figcaption h2 {
+figcaption h3 {
   font-family: Arial, sans-serif;
   font-size: 1.25rem;
   text-align: center;
@@ -93,11 +106,13 @@ figcaption h2 {
   border-radius: 50%;
   border: 0.3rem double rgba(211, 211, 211, 0.234);
   max-width: 100%;
-  max-height: 100%;
+  /*max-height: 100%;*/
+  filter: grayscale(100%);
 }
 .project-img:hover,
 .project-img:active {
   border: 0.3rem double rgba(211, 211, 211, 0.86);
+  filter: none;
 }
 @media only screen and (max-width: 480px) {
   #grid-projects {
