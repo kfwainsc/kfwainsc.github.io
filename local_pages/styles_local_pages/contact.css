@@ -1,0 +1,73 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,300");
+
+main {
+  margin: 8rem 0 0 0;
+  font-family: "Open Sans", Helvetica, Arial, sans-serif;
+}
+.contact {
+  margin: 0 0 0 3rem;
+}
+h1 {
+  margin: 0 3rem 3rem 0;
+  text-align: right;
+  opacity: 0.6;
+}
+h2 {
+  margin: 0 0 2rem 3rem;
+  font-size: 1.5rem;
+}
+h3 {
+  font-size: 1.25rem;
+}
+h2 a {
+  color: lightgray;
+}
+h2 a:hover,
+h2 a:active {
+  text-decoration: underline;
+  color: white;
+}
+.fa {
+  margin: 0 1rem 0 0;
+  font-size: 2.5rem;
+  color: lightgray;
+}
+.fa:hover {
+}
+.fa-github {
+  font-size: 3.25rem;
+}
+
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+  .contact {
+    margin: 0 0 0 1rem;
+  }
+  h1 {
+    margin: 1rem;
+  }
+}
+
+.glow:hover {
+    opacity: .8;
+  color: #fff;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
