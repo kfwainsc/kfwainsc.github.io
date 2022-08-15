@@ -1,0 +1,123 @@
+@import url(https://fonts.googleapis.com/css?family=Oswald);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 16px;
+}
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+}
+body {
+  font-family: "Arial", sans-serif;
+  background-color: black;
+}
+/*********  HEADER  ***************************/
+/*********************************************/
+/*header {
+  margin: 3rem 0 5rem 0;
+}*/
+h1 {
+  font-size: 3rem;
+  margin: 1rem;
+  font-weight: 900;
+  text-align: center;
+}
+.neon {
+  animation: flicker 2.5s infinite alternate;
+  color: #fff;
+}
+/***** Flickering **********/
+@keyframes flicker {
+  0%,
+  18%,
+  22%,
+  25%,
+  53%,
+  57%,
+  100% {
+    text-shadow: 0 0 4px #fff, 0 0 11px #fff, 0 0 19px #fff, 0 0 40px rgb(242, 255, 0),
+      0 0 80px rgb(242, 255, 0), 0 0 90px rgb(242, 255, 0), 0 0 100px rgb(242, 255, 0),
+      0 0 150px rgb(242, 255, 0);
+  }
+  20%,
+  24%,
+  55% {
+    text-shadow: none;
+  }
+}
+/*************** MAIN ***********************/
+.construction {
+  display: flex;
+  position: fixed;
+  width: 100%;
+  top: 5rem;
+  z-index: 1;
+}
+.construction2 {
+  display: none;
+}
+@media only screen and (max-width: 480px) {
+  .construction {
+    top: 8rem;
+  }
+}
+@media only screen and (max-width: 636px) {
+  .construction2 {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    top: 25rem;
+    z-index: 1;
+  }
+}
+.tape {
+  width: 100%;
+  z-index: 5;
+  filter: brightness(0.7);
+  filter: drop-shadow(8px 8px 10px rgb(0, 0, 0));
+}
+.cross-container {
+  margin: 0 2rem;
+  display: flex;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+.malt-cross {
+  width: 100%;
+  z-index: 0;
+  opacity: 0.25;
+}
+/*************** GRID **********************/
+.grid-panel {
+  display: grid;
+  margin: 0 5%;
+  gap: 0.25rem;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  grid-template: repeat(1, 1fr) / repeat(5, 1fr);
+  opacity: 0.5;
+}
+.gauge {
+  max-width: 100%;
+}
+/*********** FOOOTER ******************************/
+footer {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: rgba(242, 255, 0, 0.675);
+}
