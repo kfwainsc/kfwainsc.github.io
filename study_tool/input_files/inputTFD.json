@@ -1,0 +1,10 @@
+{
+  "title": "PIERCE COUNTY EMS: PROCEDURES & PATIENT CARE PROTOCOLS 2021",
+  "questionList": [
+    {
+      "question": {"ask": "How are you?", "options": ["shit", "ok", "been worse", "fuck yeah coke"]}
+    },
+    {"question": {"ask": "Why?", "options": ["idk", "cuz", "nun-ya", "fuck yeah coke!"]}},
+    {"question": {"ask": "alpha?", "options": ["a", "b", "c", "d!"]}}
+  ]
+}

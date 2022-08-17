@@ -43,7 +43,7 @@ main {
   display: flexbox;
   justify-content: space-evenly;
 }
-.option {
+.option-label {
   margin: 1rem;
   display: block;
   font-size: 1.5rem;
@@ -61,15 +61,26 @@ main {
   background-color: whitesmoke;
 }
 .btn:hover,
+.btn:focus {
+  background-color: lightblue;
+}
 .btn:active {
   -webkit-box-shadow: inset 2px 4px 5px 1px #00000095;
   box-shadow: inset 2px 4px 5px 1px #00000095;
+  background-color: rgb(211, 211, 211);
 }
 #quiz-nav {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
+@media only screen and (max-width: 480px) {
+  .btn {
+    padding: 0.25rem 1rem;
+    font-size: 1.25rem;
+  }
+}
+
 /*************************************************/
 /****************  FOOTER  ***********************/
 footer {
