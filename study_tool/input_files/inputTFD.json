@@ -1,8 +1,19 @@
 {
   "title": "PIERCE COUNTY EMS:",
-  "subtitle": "PROCEDURES & PATIENT CARE PROTOCOLS 2021",
+  "subtitle": "PROCEDURES & PATIENT CARE PROTOCOLS<br>2021",
   "logo": "../images/EMT_WA_patch.jpg",
   "questList": [
+    {
+      "ask": "Which of the following is True for Impaled Objects...",
+      "options": [
+        "All listed.",
+        "Do not remove unless the airway is compromised.",
+        "Secure the object in place.",
+        "Taser® darts will be removed by EMS personnel only if EMS was already dispatched to the scene for a medical/trauma event.",
+        "None Listed."
+      ],
+      "feedback": "All Listed.\nSee pg 34, Note items 1-12 on Taser® barbed darts"
+    },
     {
       "ask": "Under Medical Bleeding:<br>Utilize M.A.R.C.H. to immediately identify and treat life-threatening conditions.<br>Which of the following is the correct definition of M.A.R.C.H ?",
       "options": [
@@ -16,17 +27,6 @@
       "ask": "Overdose:<br>All overdoses that are unstable/ALOC/AMS shall be dispatched as ALS. 2.",
       "options": ["True", "False"],
       "feedback": "TRUE\nSee pg 50"
-    },
-    {
-      "ask": "Which of the following is True for Impaled Objects...",
-      "options": [
-        "All listed.",
-        "Do not remove unless the airway is compromised.",
-        "Secure the object in place.",
-        "Taser® darts will be removed by EMS personnel only if EMS was already dispatched to the scene for a medical/trauma event.",
-        "None Listed."
-      ],
-      "feedback": "All Listed.\nSee pg 34, Note items 1-12 on Taser® barbed darts"
     },
     {
       "ask": "Limit scene time for no-cardiac arrest patients, with goal of ≤ 15 minutes.",

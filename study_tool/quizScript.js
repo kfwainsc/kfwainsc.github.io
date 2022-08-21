@@ -24,7 +24,7 @@ const allNavBtns = document.getElementsByClassName("btn");
 const backBtn = document.getElementById("btn-back");
 const checkBtn = document.getElementById("btn-check-answer");
 const nextBtn = document.getElementById("btn-next");
-//const resetBtn = document.getElementById("btn-reset");
+const resetBtn = document.getElementById("btn-reset");
 
 // feedback and counters
 const attempts = document.getElementById("attempts");
@@ -139,7 +139,9 @@ const displayFeedback = (correct) => {
     feedbackAnswer.innerHTML = "";
   }
   attempts.innerHTML = `Attempts: ${quiz.getCurrQuest().attempts}`;
-  document.getElementById("correct-count").innerHTML = `Correct: ${quiz.correctCount}`;
+  document.getElementById(
+    "correct-count"
+  ).innerHTML = `Correct: ${quiz.correctCount} of ${quiz.questList.length}`;
   feedback.style.display = "block";
 };
 
@@ -179,4 +181,4 @@ const restartQuiz = () => {
     setUp();
   }
 };
-//resetBtn.addEventListener("click", restartQuiz);
+resetBtn.addEventListener("click", restartQuiz);
