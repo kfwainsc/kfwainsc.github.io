@@ -2,6 +2,7 @@
 //const Question = require("../quizBrain.js");
 import * as assert from "assert";
 import {Question, Quiz} from "../quizBrain.js";
+import rawQuizJSON from "../input_files/inputTFD.json" assert {type: "json"};
 
 /***************************************************************************/
 /**** QUESTION CLASS TESTING ***********************************************/
@@ -83,11 +84,83 @@ describe("quiz constructor()", () => {
   it("init values match those passed in", () => {
     assert.strictEqual(quiz.title, "Test Title");
     assert.deepStrictEqual(quiz._questList, questArray);
-    assert.strictEqual(quiz._backgrndImg, "./testImg.jpg");
+    assert.strictEqual(quiz._logo, "./testImg.jpg");
   });
   it("default values are properly init", () => {
-    assert.strictEqual(quiz._currentQuest, 0);
+    assert.strictEqual(quiz._currQ, 0);
     assert.strictEqual(quiz._correctCount, 0);
     assert.strictEqual(quiz._endQuiz, false);
   });
 });
+describe("quiz askQuestion", () => {
+  let questArray = [
+    new Question("riddle me this", ["apple", "banana", "cow", "dog"]),
+    new Question("guess me that", ["orange", "coffee", "red", "blue"]),
+  ];
+  let quiz = new Quiz("Test Title", questArray, "./testImg.jpg");
+  let result = quiz.askQuestion();
+
+  it("returns current queston", () => {
+    assert.deepStrictEqual(result, questArray[0]);
+  });
+  it("increments current question by 1", () => {
+    assert.strictEqual(quiz._currQ, 1);
+    result = quiz.askQuestion();
+    assert.strictEqual(quiz._currQ, 2);
+  });
+  it("end quiz is true after last question asked", () => {
+    assert.strictEqual(quiz._endQuiz, true);
+  });
+  it("throws an error if already at end of question list", () => {
+    assert.throws(() => quiz.askQuestion(), Error);
+  });
+});
+/*
+describe("quiz checkAnswer(answer)", () => {
+  let questArray = [
+    new Question("riddle me this", ["apple", "banana", "cow", "dog"]),
+    new Question("guess me that", ["orange", "coffee", "red", "blue"]),
+  ];
+  let quiz1 = new Quiz("Test Title", questArray, "./testImg.jpg");
+
+  // PROBLEM !!!!!!!!!!!!!!!!!!!!!!!!!!!
+  //
+  quiz1.askQuestion();
+  it("returns true if answer is correct", () => {
+    console.log(quiz1.questList[this._currQ - 1]);
+    console.log("afjafklfajklflkjfa");
+    assert.strictEqual(quiz1.checkAnswer("apple"), true);
+  });
+
+  quiz1.askQuestion();
+  it("returns false if answer is wrong", () => {
+    assert.strictEqual(quiz1.checkAnswer("apple"), false);
+  });
+});
+
+describe("restart quiz", () => {
+  /*const inputQuestions = [];
+  for (const q of rawQuizJSON.questList) {
+    inputQuestions.push(new Question(q.ask, q.options));
+  }
+  const quiz = new Quiz(rawQuizJSON.title, inputQuestions, rawQuizJSON.logo);
+  let questArray = [
+    new Question("riddle me this", ["apple", "banana", "cow", "dog"]),
+    new Question("guess me that", ["orange", "coffee", "red", "blue"]),
+  ];
+  let quiz2 = new Quiz("Test Title", questArray, "./testImg.jpg");
+  for (const x of quiz2.questList) {
+    quiz2.askQuestion();
+  }
+  it("quiz is at the end", () => {
+    assert.ok(quiz2._endQuiz, true);
+  });
+
+  quiz2.restart();
+  it("quiz resets all default values", () => {
+    assert.strictEqual(quiz2._currQ, 0);
+    assert.strictEqual(quiz2._correctCount, 0);
+    assert.strictEqual(quiz2._endQuiz, false);
+  });
+});
+*/

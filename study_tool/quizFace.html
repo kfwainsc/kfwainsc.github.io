@@ -5,41 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="quizFace.css" />
-    <script src="quizScript.js" defer></script>
+    <script src="quizScript.js" type="module" defer></script>
     <title>Draft Quiz</title>
   </head>
   <body>
-    <header><h1>quiz</h1></header>
+    <header>
+      <h1 id="quiz-title">Quiz</h1>
+      <h2 id="subtitle">Subtitle</h2>
+    </header>
     <main>
+      <div class="quiz-nav">
+        <button id="btn-reset" class="btn">Reset Quiz</button>
+        <h3 id="correct-count"></h3>
+      </div>
       <div class="quiz-box">
         <form action="">
-          <h2>What is the normal respiration rate for adults? 12-20</h2>
+          <h2 id="question">Question?</h2>
           <div class="options-container">
-            <label id="option-A" for="radio-A" class="option-label">
+            <div class="option-bundle">
               <input id="radio-A" class="option" type="radio" name="option" value="A" />
-              Option A
-            </label>
-            <label for="radio-B" class="option-label">
+              <label id="option-A" for="radio-A" class="option-label"> Option A </label>
+            </div>
+            <div class="option-bundle">
               <input id="radio-B" class="option" type="radio" name="option" value="B" />
-              Option B
-            </label>
-            <label for="radio-C" class="option-label">
+              <label for="radio-B" class="option-label"> Option B </label>
+            </div>
+            <div class="option-bundle">
               <input id="radio-C" class="option" type="radio" name="option" value="C" />
-              Option C
-            </label>
-            <label for="radio-D" class="option-label">
+              <label for="radio-C" class="option-label"> Option C </label>
+            </div>
+            <div class="option-bundle">
               <input id="radio-D" class="option" type="radio" name="option" value="D" />
-              Option D
-            </label>
+              <label for="radio-D" class="option-label"> Option D </label>
+            </div>
+            <div class="option-bundle">
+              <input id="radio-E" class="option" type="radio" name="option" value="E" />
+              <label for="radio-E" class="option-label"> Option E </label>
+            </div>
           </div>
         </form>
-        <nav id="quiz-nav">
+        <div id="feedback">
+          <h2 id="feedback-correct"></h2>
+          <h3 id="feedback-answer"></h3>
+          <h3 id="attempts"></h3>
+        </div>
+        <nav id="quiz-nav" class="quiz-nav">
           <button id="btn-back" class="btn">Back</button>
-          <button id="btn-check-answer" class="btn">Check</button>
+          <button id="btn-check-answer" class="btn" type="submit">Check</button>
           <button id="btn-next" class="btn">Next</button>
         </nav>
       </div>
     </main>
+    <div id="logo-container"><img id="logo" src="" alt="" /></div>
     <footer>
       <h6>&copy;Kendra Wainscott Studios</h6>
     </footer>
