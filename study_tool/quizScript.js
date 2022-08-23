@@ -28,6 +28,7 @@ const resetBtn = document.getElementById("btn-reset");
 const finishBtn = document.getElementById("btn-finish");
 // feedback and counters
 const attempts = document.getElementById("attempts");
+const correctCount = document.getElementById("correct-count");
 const feedback = document.getElementById("feedback");
 const feedbackCorrect = document.getElementById("feedback-correct");
 const feedbackAnswer = document.getElementById("feedback-answer");
@@ -109,16 +110,23 @@ const setNewOptions = (newQ) => {
 
 // for new question, set new answers for radio buttons
 const setNewQuestion = () => {
-  //let okay = quiz.goNext;
+  //below can be better logic or fixed with submit
   if (quiz.goNext || quiz.getCurrQuest().attempts > 0) {
-    feedback.style.display = "none";
+    feedback.style.display = "none"; //can probs removew wt logic
     let currQ = quiz.askQuestion();
     currAsk.innerHTML = currQ.ask;
-    setNewOptions(currQ);
-    checkValidBtns();
     if (currQ.done) {
-      displayFeedback(true);
+      quiz.goNext = true; ////////////////*
+      displayFinishedQuest(currQ);
+      displayFeedback("true");
+    } else {
+      setNewOptions(currQ);
+      if (currQ.attempts > 0) {
+        displayFeedback(false);
+        quiz.goNext = true; ////////////////*
+      }
     }
+    checkValidBtns();
   } else alert("question must be checked before moving on");
 };
 nextBtn.addEventListener("click", setNewQuestion);
@@ -126,6 +134,7 @@ nextBtn.addEventListener("click", setNewQuestion);
 // inital set up, also called for reset
 const setUp = () => {
   feedback.style.display = "none";
+  correctCount.innerHTML = "Correct: 0";
   let currQ = quiz.askQuestion();
   currAsk.innerHTML = currQ.ask;
   setNewOptions(currQ);
@@ -141,12 +150,12 @@ const displayFeedback = (correct) => {
   } else {
     feedbackCorrect.innerHTML = "INCORRECT :(";
     feedbackCorrect.style.color = "red";
-    feedbackAnswer.innerHTML = "";
+    feedbackAnswer.innerHTML = ""; ///////////////////////////
   }
+  /// MOVE TO set Question??
   attempts.innerHTML = `Attempts: ${quiz.getCurrQuest().attempts}`;
-  document.getElementById(
-    "correct-count"
-  ).innerHTML = `Correct: ${quiz.correctCount} of ${quiz.questList.length}`;
+  correctCount.innerHTML = `Correct: ${quiz.correctCount} of ${quiz.questList.length}`;
+  // REDUNANT somwwhere?
   feedback.style.display = "block";
 };
 
@@ -180,11 +189,12 @@ const previousQuestion = () => {
   //feedback.style.display = "block";
   let currQ = quiz.previousQuest();
   currAsk.innerHTML = currQ.ask;
-  //  setNewOptions(currQ);
   if (currQ.done) {
     displayFinishedQuest(currQ);
+  } else {
+    setNewOptions(currQ);
   }
-  if (currQ.done === true) displayFeedback("true");
+  if (currQ.done) displayFeedback("true");
   else if (currQ.attempts > 0) displayFeedback(false);
   checkValidBtns();
   quiz.goNext = true;
