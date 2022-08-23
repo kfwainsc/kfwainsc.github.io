@@ -25,12 +25,19 @@ const backBtn = document.getElementById("btn-back");
 const checkBtn = document.getElementById("btn-check-answer");
 const nextBtn = document.getElementById("btn-next");
 const resetBtn = document.getElementById("btn-reset");
-
+const finishBtn = document.getElementById("btn-finish");
 // feedback and counters
 const attempts = document.getElementById("attempts");
 const feedback = document.getElementById("feedback");
 const feedbackCorrect = document.getElementById("feedback-correct");
 const feedbackAnswer = document.getElementById("feedback-answer");
+// restart & finish
+const runningQuiz = document.getElementById("running-quiz");
+const finalResults = document.getElementById("final-results");
+const resultsHeaders = document.getElementsByClassName("results-h");
+const excellent = document.getElementById("excellent");
+const toReview = document.getElementById("to-review");
+const unasked = document.getElementById("unasked");
 
 /******   Highlighting for hover click etc  *****/
 for (const btn of allNavBtns) {
@@ -177,8 +184,69 @@ backBtn.addEventListener("click", previousQuestion);
 
 const restartQuiz = () => {
   if (confirm("Are you sure you want to restart?")) {
+    if (runningQuiz.style.display === "none") {
+      runningQuiz.style.display = "block";
+      finalResults.style.display = "none";
+      for (h of resultsHeaders) {
+        if (h.style.display === "none") h.style.display = "block";
+      }
+      for (p of document.getElementsByClassName("results-p")) {
+        if (p.innerHTML != "") p.innerHTML = "";
+      }
+      if (unasked.style.display === "none") {
+        unasked.style.display = "block";
+      }
+      if (toReview.style.display === "none") {
+        unasked.style.display = "block";
+      }
+    }
     quiz.restart();
     setUp();
   }
 };
 resetBtn.addEventListener("click", restartQuiz);
+
+const displayAllQuestions = () => {
+  for (const quest of quiz.questList) {
+    if (quest.done === true && quest.attempts === 1) {
+      excellent.innerHTML += `<br>${quest.ask}<br>${quest.feedback}<br>`;
+    } else if (!quest.done && quest.attempts === 0) {
+      unasked.innerHTML += `<br>${quest.ask}<br>${quest.feedback}<br>`;
+    } else {
+      toReview.innerHTML += `<br>${quest.ask}<br>${quest.feedback}<br>Attempts: ${quest.attempts}<br>`;
+    }
+  }
+  console.log(resultsHeaders[2].innerHTML);
+  if (unasked.innerHTML === "") {
+    resultsHeaders[2].style.display = "none";
+    if (toReview.innerHTML === "") {
+      resultsHeaders[0].style.display = "none";
+      document.getElementById("congrats").style.display = "block";
+    }
+  }
+  if (excellent.innerHTML === "") {
+    resultsHeaders[1].style.display = "none";
+  }
+};
+
+const finishQuiz = () => {
+  if (confirm("Are you sure you want to end this quiz?")) {
+    document.getElementById("running-quiz").style.display = "none";
+    document.getElementById("final-results").style.display = "block";
+  }
+  displayAllQuestions();
+};
+finishBtn.addEventListener("click", finishQuiz);
+
+/*const finishedJsonQuiz = JSON.stringify(quiz);
+export {finishedJsonQuiz};
+
+const finishQuiz = () => {
+  if (confirm("Are you sure you want to end this quiz?")) {
+    //window.location.href = "./quizResults.html";
+    const resultsMain = JSON.parse("./input_files/finalResults.json");
+    document.getElementsByTagName("main")[0].innerHTML = resultsMain;
+  }
+};
+finishBtn.addEventListener("click", finishQuiz);
+*/

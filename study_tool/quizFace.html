@@ -17,7 +17,7 @@
       </div>
     </header>
     <main>
-      <div class="quiz-box">
+      <div id="running-quiz" class="quiz-box">
         <form action="">
           <h2 id="question">Question?</h2>
           <div class="options-container">
@@ -54,10 +54,32 @@
           <button id="btn-next" class="btn">Next</button>
         </nav>
       </div>
+      <div id="final-results" class="quiz-box">
+        <h2>Final Results</h2>
+        <span>
+          <h3 id="accuracy">Accuracy:</h3>
+          <div id="congrats">
+            <iframe
+              src="https://giphy.com/embed/l41lLuV3wRmJ0DxCw"
+              class="giphy-embed"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </span>
+
+        <hr />
+        <h3 class="results-h">Needs Review:</h3>
+        <p id="to-review" class="results-p"></p>
+        <hr />
+        <h3 class="results-h">Excellent Work!</h3>
+        <p id="excellent" class="results-p"></p>
+        <hr />
+        <h3 class="results-h">Unanswered:</h3>
+        <p id="unasked" class="results-p"></p>
+      </div>
       <div id="logo-container">
         <button id="btn-reset" class="btn">Restart<br />Quiz</button>
         <img id="logo" src="" alt="" />
-
         <button id="btn-finish" class="btn">End<br />Quiz</button>
       </div>
     </main>
