@@ -19,6 +19,15 @@ export class Question {
   get feedback() {
     return this._feedback;
   }
+  getFeeback(choice) {
+    if (typeof choice !== string) throw new TypeError("getFeedback input must be type string");
+    else if (choice === "all") return this._feedback;
+    else if (choice === "info") return this._feedback.info;
+    else if (choice === "location") return this._feedback.location;
+    else {
+      throw new Error("Only valid getFeedback() inputs are strings: 'all', 'info' or 'location' ");
+    }
+  }
   get done() {
     return this._done;
   }

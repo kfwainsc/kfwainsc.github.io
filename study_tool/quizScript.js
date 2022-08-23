@@ -32,6 +32,8 @@ const correctCount = document.getElementById("correct-count");
 const feedback = document.getElementById("feedback");
 const feedbackCorrect = document.getElementById("feedback-correct");
 const feedbackAnswer = document.getElementById("feedback-answer");
+const feedbackLocation = document.getElementById("feedback-location");
+
 // restart & finish
 const runningQuiz = document.getElementById("running-quiz");
 const finalResults = document.getElementById("final-results");
@@ -113,14 +115,14 @@ const setNewQuestion = () => {
   //below can be better logic or fixed with submit
   if (quiz.goNext || quiz.getCurrQuest().attempts > 0) {
     feedback.style.display = "none"; //can probs removew wt logic
-    let currQ = quiz.askQuestion();
+    const currQ = quiz.askQuestion();
     currAsk.innerHTML = currQ.ask;
     if (currQ.done) {
       quiz.goNext = true; ////////////////*
       displayFinishedQuest(currQ);
       displayFeedback("true");
     } else {
-      setNewOptions(currQ);
+      setNewOptions(currQ); //diplay all opts if not done or new
       if (currQ.attempts > 0) {
         displayFeedback(false);
         quiz.goNext = true; ////////////////*
@@ -145,12 +147,14 @@ setUp();
 const displayFeedback = (correct) => {
   if (correct) {
     feedbackCorrect.innerHTML = "CORRECT :)";
-    feedbackAnswer.innerHTML = `${quiz.getCurrQuest().feedback}`;
     feedbackCorrect.style.color = "green";
+    feedbackAnswer.innerHTML = `${quiz.getCurrQuest().feedback.info}`;
+    feedbackLocation.innerHTML = `${quiz.getCurrQuest().feedback.location}`;
   } else {
     feedbackCorrect.innerHTML = "INCORRECT :(";
     feedbackCorrect.style.color = "red";
-    feedbackAnswer.innerHTML = ""; ///////////////////////////
+    feedbackAnswer.innerHTML = "";
+    feedbackLocation.innerHTML = `${quiz.getCurrQuest().feedback.location}`;
   }
   /// MOVE TO set Question??
   attempts.innerHTML = `Attempts: ${quiz.getCurrQuest().attempts}`;
@@ -187,7 +191,7 @@ const displayFinishedQuest = (doneQ) => {
 
 const previousQuestion = () => {
   //feedback.style.display = "block";
-  let currQ = quiz.previousQuest();
+  const currQ = quiz.previousQuest();
   currAsk.innerHTML = currQ.ask;
   if (currQ.done) {
     displayFinishedQuest(currQ);
@@ -233,11 +237,11 @@ const displayAllQuestions = () => {
   document.getElementById("accuracy").innerHTML += `${quiz.calcAccuracy()}%`;
   for (const quest of quiz.questList) {
     if (quest.done === true && quest.attempts === 1) {
-      excellent.innerHTML += `<br>${quest.ask}<br>${quest.feedback}<br>`;
+      excellent.innerHTML += `<br>${quest.ask}<br>${quest.feedback.info}<br>${quest.feedback.location}<br>`;
     } else if (!quest.done && quest.attempts === 0) {
-      unasked.innerHTML += `<br>${quest.ask}<br>${quest.feedback}<br>`;
+      unasked.innerHTML += `<br>${quest.ask}<br>${quest.feedback.info}<br>${quest.feedback.location}<br>`;
     } else {
-      toReview.innerHTML += `<br>${quest.ask}<br>${quest.feedback}<br>Attempts: ${quest.attempts}<br>`;
+      toReview.innerHTML += `<br>${quest.ask}<br>${quest.feedback.info}<br>${quest.feedback.location}<br>Attempts: ${quest.attempts}<br>`;
     }
   }
   if (unasked.innerHTML === "") {

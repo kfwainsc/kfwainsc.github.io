@@ -64,7 +64,8 @@ main {
 #feedback-correct {
   text-align: center;
 }
-#feedback-answer {
+#feedback-answer,
+#feedback-locaation {
   margin: 1rem 0 0.5rem 0;
   font-weight: 500;
   text-align: left;
