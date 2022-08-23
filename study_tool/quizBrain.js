@@ -36,6 +36,12 @@ export class Question {
       return false;
     } else throw new Error("Question already properly answered");
   }
+  shuffleOptions() {
+    for (let i = this._options.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this._options[i], this._options[j]] = [this._options[j], this._options[i]];
+    }
+  }
   reset() {
     this._done = false;
     this._attempts = 0;

@@ -39,7 +39,7 @@ const excellent = document.getElementById("excellent");
 const toReview = document.getElementById("to-review");
 const unasked = document.getElementById("unasked");
 
-/******   Highlighting for hover click etc  *****/
+/******   Highlighting for hover/mouseover, clicks  *****/
 for (const btn of allNavBtns) {
   btn.addEventListener("mouseleave", () => {
     btn.style.backgroundColor = "whitesmoke";
@@ -86,20 +86,17 @@ for (const btn of radioBtns) {
 }
 // for new question, set new answers for radio buttons
 const setNewOptions = (newQ) => {
+  newQ.shuffleOptions();
   let i = 0;
   for (const option of currOptions) {
     if (newQ.options[i] == undefined) {
-      option.style.display = "none";
-      radioBtns[i].style.display = "none";
       currOptBundles[i].style.display = "none";
-      currOptBundles[i].style.border = "0.25rem dashed rgba(173, 216, 230, 0.534)";
       option.innerHTML = "";
       radioBtns[i].value = "";
       radioBtns[i].checked = false;
     } else {
-      option.style.display = "inline";
-      radioBtns[i].style.display = "inline-block";
       currOptBundles[i].style.display = "block";
+      // unhighlight if was checked
       currOptBundles[i].style.backgroundColor = "whitesmoke";
       currOptBundles[i].style.border = "0.25rem dashed rgba(173, 216, 230, 0.534)";
       option.innerHTML = `${newQ.options[i]}`;
@@ -109,6 +106,7 @@ const setNewOptions = (newQ) => {
     ++i;
   }
 };
+
 // for new question, set new answers for radio buttons
 const setNewQuestion = () => {
   //let okay = quiz.goNext;
@@ -170,11 +168,22 @@ const checkAnswer = () => {
 };
 checkBtn.addEventListener("click", checkAnswer);
 
+const displayFinishedQuest = (doneQ) => {
+  currOptBundles[0].style.display = "block";
+  currOptions[0].innerHTML = doneQ.answer;
+  for (let i = 1; i < currOptions.length; ++i) {
+    currOptBundles[i].style.display = "none";
+  }
+};
+
 const previousQuestion = () => {
   //feedback.style.display = "block";
   let currQ = quiz.previousQuest();
   currAsk.innerHTML = currQ.ask;
-  setNewOptions(currQ);
+  //  setNewOptions(currQ);
+  if (currQ.done) {
+    displayFinishedQuest(currQ);
+  }
   if (currQ.done === true) displayFeedback("true");
   else if (currQ.attempts > 0) displayFeedback(false);
   checkValidBtns();
