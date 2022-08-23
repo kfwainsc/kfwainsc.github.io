@@ -187,10 +187,11 @@ const restartQuiz = () => {
     if (runningQuiz.style.display === "none") {
       runningQuiz.style.display = "block";
       finalResults.style.display = "none";
-      for (h of resultsHeaders) {
+
+      for (const h of resultsHeaders) {
         if (h.style.display === "none") h.style.display = "block";
       }
-      for (p of document.getElementsByClassName("results-p")) {
+      for (const p of document.getElementsByClassName("results-p")) {
         if (p.innerHTML != "") p.innerHTML = "";
       }
       if (unasked.style.display === "none") {
@@ -199,7 +200,10 @@ const restartQuiz = () => {
       if (toReview.style.display === "none") {
         unasked.style.display = "block";
       }
+      document.getElementById("accuracy").innerHTML = "Accuracy:";
+      finishBtn.disabled = false;
     }
+
     quiz.restart();
     setUp();
   }
@@ -207,6 +211,7 @@ const restartQuiz = () => {
 resetBtn.addEventListener("click", restartQuiz);
 
 const displayAllQuestions = () => {
+  document.getElementById("accuracy").innerHTML += `${quiz.calcAccuracy()}%`;
   for (const quest of quiz.questList) {
     if (quest.done === true && quest.attempts === 1) {
       excellent.innerHTML += `<br>${quest.ask}<br>${quest.feedback}<br>`;
@@ -216,16 +221,14 @@ const displayAllQuestions = () => {
       toReview.innerHTML += `<br>${quest.ask}<br>${quest.feedback}<br>Attempts: ${quest.attempts}<br>`;
     }
   }
-  console.log(resultsHeaders[2].innerHTML);
   if (unasked.innerHTML === "") {
     resultsHeaders[2].style.display = "none";
     if (toReview.innerHTML === "") {
-      resultsHeaders[0].style.display = "none";
-      document.getElementById("congrats").style.display = "block";
+      resultsHeaders[1].style.display = "none";
     }
   }
   if (excellent.innerHTML === "") {
-    resultsHeaders[1].style.display = "none";
+    resultsHeaders[0].style.display = "none";
   }
 };
 
@@ -235,6 +238,7 @@ const finishQuiz = () => {
     document.getElementById("final-results").style.display = "block";
   }
   displayAllQuestions();
+  finishBtn.disabled = true;
 };
 finishBtn.addEventListener("click", finishQuiz);
 

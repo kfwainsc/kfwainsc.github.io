@@ -48,6 +48,7 @@ export class Quiz {
     this._questList = questList;
     this._currQ = 0;
     this._correctCount = 0;
+    this._attemptCount = 0;
     this._goNext = false;
     this._endQuiz = false;
   }
@@ -89,6 +90,7 @@ export class Quiz {
     if (this._currQ - 1 < 0) {
       throw new Error("No questions have been asked");
     }
+    ++this._attemptCount;
     this._goNext = true;
     if (this._questList[this._currQ - 1].checkAnswer(answer)) {
       ++this._correctCount;
@@ -105,12 +107,22 @@ export class Quiz {
       return this._questList[this._currQ - 1];
     }
   }
+  calcAccuracy() {
+    if (this._attemptCount == 0 || this._correctCount == 0) {
+      return 0;
+    } else if (this._attemptCount < this._questList.length) {
+      return (this._correctCount / this._questList.length) * 100;
+    } else {
+      return (this._correctCount / this._attemptCount) * 100;
+    }
+  }
   restart() {
     for (const q of this._questList) {
       q.reset();
     }
     this._currQ = 0;
     this._correctCount = 0;
+    this._attemptCount = 0;
     this._goNext = false;
     this._endQuiz = false;
   }
