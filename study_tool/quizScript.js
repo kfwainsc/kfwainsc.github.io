@@ -94,8 +94,8 @@ const setNewOptions = (newQ) => {
   for (const option of currOptions) {
     if (newQ.options[i] == undefined) {
       currOptBundles[i].style.display = "none";
-      option.innerHTML = "";
-      radioBtns[i].value = "";
+      option.innerHTML = ""; ////////////////////////////
+      radioBtns[i].value = ""; ////////////////////////
       radioBtns[i].checked = false;
     } else {
       currOptBundles[i].style.display = "block";
@@ -226,7 +226,6 @@ const restartQuiz = () => {
       document.getElementById("accuracy").innerHTML = "Accuracy:";
       finishBtn.disabled = false;
     }
-
     quiz.restart();
     setUp();
   }
@@ -237,7 +236,7 @@ const displayAllQuestions = () => {
   document.getElementById("accuracy").innerHTML += `${quiz.calcAccuracy()}%`;
   for (const quest of quiz.questList) {
     if (quest.done === true && quest.attempts === 1) {
-      excellent.innerHTML += `<br>${quest.ask}<br>${quest.feedback.info}<br>${quest.feedback.location}<br>`;
+      excellent.innerHTML += `<br>${quest.ask}<br>${quest.feedback.info}<br><b>${quest.feedback.location}</b><br>`;
     } else if (!quest.done && quest.attempts === 0) {
       unasked.innerHTML += `<br>${quest.ask}<br>${quest.feedback.info}<br>${quest.feedback.location}<br>`;
     } else {
