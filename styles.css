@@ -1,3 +1,8 @@
+/****  by Kendra Wainscott 2022  ***************************/
+/****  Main style sheet, used for the landing page of the **/
+/****  portfolio website and inherited by subsequent  ******/
+/****  pages of the portfolio ******************************/
+/***********************************************************/
 * {
   margin: 0;
   padding: 0;
@@ -55,7 +60,7 @@ nav {
   list-style-type: none;
 }
 /********************************************************/
-/******* JUMBO ****************************/
+/********* JUMBO ****************************************/
 .jumbotron {
   margin-top: 5rem;
   width: 100%;
@@ -73,7 +78,6 @@ nav {
     margin-top: 5%;
   }
 }*/
-
 /*********** PROJECTS GRID ************/
 #featured {
   display: block;
@@ -140,8 +144,8 @@ figcaption h3 {
     grid-template: repeat(3, 1fr) / repeat(1, 1fr);
   }
 }
-/******************************************************************/
-/************************* ASIDE   *******************************/
+/*********************************************************/
+/************************* ASIDE   ***********************/
 aside {
   margin-top: 7%;
   text-align: center;
@@ -206,29 +210,11 @@ aside {
   letter-spacing: 0.5rem;
 }
 
-/******************************************************************/
-
-/*********** FOOOTER **********************************************/
+/***********************************************************/
+/********** FOOOTER ****************************************/
 footer {
   margin-top: 5rem;
   margin-bottom: 1rem;
   display: flex;
   justify-content: center;
-}
-
-/**************************************************/
-.social-media {
-  display: flex;
-  justify-content: center;
-}
-.fa-instagram,
-.fa-tiktok {
-  font-size: 2.25rem;
-  margin-left: 0.75rem;
-  text-decoration: none;
-  color: darkgray;
-}
-.fa-instagram:hover,
-.fa-tiktok:hover {
-  color: rgb(128, 128, 128);
 }
