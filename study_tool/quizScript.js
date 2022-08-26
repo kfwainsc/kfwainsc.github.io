@@ -77,8 +77,22 @@ const checkValidBtns = () => {
 };
 // highlighting for select and deselect radio btn elements
 // find a more efficient way to do this
-for (const btn of radioBtns) {
+/*for (const btn of radioBtns) {
   btn.addEventListener("change", () => {
+    for (const i in radioBtns) {
+      if (radioBtns[i].checked == true) {
+        currOptBundles[i].style.backgroundColor = "rgba(173, 216, 230, 0.534)";
+        currOptBundles[i].style.border = "0.25rem dashed black";
+      } else if (radioBtns[i].checked == false) {
+        currOptBundles[i].style.backgroundColor = "whitesmoke";
+        currOptBundles[i].style.border = "0.25rem dashed rgba(173, 216, 230, 0.534)";
+      }
+    }
+  });
+}*/
+for (let i = 0; i < currOptBundles.length; ++i) {
+  currOptBundles[i].addEventListener("click", () => {
+    radioBtns[i].checked = true;
     for (const i in radioBtns) {
       if (radioBtns[i].checked == true) {
         currOptBundles[i].style.backgroundColor = "rgba(173, 216, 230, 0.534)";
