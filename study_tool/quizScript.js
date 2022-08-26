@@ -1,5 +1,5 @@
 import {Question, Quiz} from "./quizBrain.js";
-import rawQuizJSON from "./input_files/inputTFD.json";
+import rawQuizJSON from "./input_files/inputTFD.json" assert {type: "json"};
 
 // Load in questions and create quiz object
 const inputQuestions = [];
