@@ -27,6 +27,7 @@ const allNavBtns = document.getElementsByClassName("btn");
 const backBtn = document.getElementById("btn-back");
 const checkBtn = document.getElementById("btn-check-answer");
 const nextBtn = document.getElementById("btn-next");
+const roundBtns = document.getElementsByClassName("roundBtns");
 const resetBtn = document.getElementById("btn-reset");
 const finishBtn = document.getElementById("btn-finish");
 // feedback and counters
@@ -64,6 +65,15 @@ nextBtn.addEventListener("mouseenter", () => {
     nextBtn.style.backgroundColor = "lightblue";
   }
 });
+for (const btn of roundBtns) {
+  btn.addEventListener("mouseenter", () => {
+    btn.style.backgroundColor = "rgb(206, 31, 41, 0.9)";
+    btn.style.color = "white";
+  });
+  btn.addEventListener("mouseleave", () => {
+    btn.style.color = "black";
+  });
+}
 const checkValidBtns = () => {
   if (quiz.endQuiz && quiz.currQ === quiz.questList.length) nextBtn.disabled = true;
   else nextBtn.disabled = false;
@@ -72,7 +82,10 @@ const checkValidBtns = () => {
   if (quiz.currQ <= 1) backBtn.disabled = true;
   else backBtn.disabled = false;
   for (const btn of allNavBtns) {
-    btn.style.backgroundColor = "whitesmoke";
+    if (btn.style.backgroundColor !== "whitesmoke") btn.style.backgroundColor = "whitesmoke";
+  }
+  for (const btn of roundBtns) {
+    if (btn.style.color === "white") btn.style.color = "black";
   }
 };
 // highlighting for select and deselect radio btn elements
@@ -253,11 +266,11 @@ const displayAllQuestions = () => {
   document.getElementById("accuracy").innerHTML += `${quiz.calcAccuracy()}%`;
   for (const quest of quiz.questList) {
     if (quest.done === true && quest.attempts === 1) {
-      excellent.innerHTML += `<br>${quest.ask}<br>${quest.feedback.info}<br><b>${quest.feedback.location}</b><br>`;
+      excellent.innerHTML += `<br><b>${quest.ask}</b><br>${quest.feedback.info}<br><em>${quest.feedback.location}</em><br>`;
     } else if (!quest.done && quest.attempts === 0) {
-      unasked.innerHTML += `<br>${quest.ask}<br>${quest.feedback.info}<br>${quest.feedback.location}<br>`;
+      unasked.innerHTML += `<br><b>${quest.ask}</b><br>${quest.feedback.info}<br><em>${quest.feedback.location}</em><br>`;
     } else {
-      toReview.innerHTML += `<br>${quest.ask}<br>${quest.feedback.info}<br>${quest.feedback.location}<br>Attempts: ${quest.attempts}<br>`;
+      toReview.innerHTML += `<br><b>${quest.ask}</b><br>${quest.feedback.info}<br>${quest.feedback.location}<br>Attempts: ${quest.attempts}<br>`;
     }
   }
   if (unasked.innerHTML === "") {

@@ -104,13 +104,9 @@ input[type="radio"]:checked + label {
   padding: 0.25rem;
   border: 0.25rem dashed rgba(173, 216, 230, 0.534);
   background-color: whitesmoke;
-  /*display: flexbox;
-  justify-content: space-evenly;*/
 }
 .options-container {
   margin: 5%;
-  /*display: flexbox;
-  justify-content: space-evenly;*/
 }
 .option-label {
   margin: 0 0 0 0.25rem;
