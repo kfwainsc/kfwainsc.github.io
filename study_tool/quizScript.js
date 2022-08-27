@@ -1,7 +1,8 @@
 import {Question, Quiz} from "./quizBrain.js";
 //import rawQuizJSON from "./input_files/inputTFD.json" assert {type: "json"};
 
-const response = await fetch("./input_files/inputTFD.json");
+//const response = await fetch("./input_files/inputTFD.json");
+const response = await fetch("./input_files/inputEMS.json");
 const rawQuizJSON = await response.json();
 
 // Load in questions and create quiz object
@@ -270,7 +271,7 @@ const displayAllQuestions = () => {
     } else if (!quest.done && quest.attempts === 0) {
       unasked.innerHTML += `<br><b>${quest.ask}</b><br>${quest.feedback.info}<br><em>${quest.feedback.location}</em><br>`;
     } else {
-      toReview.innerHTML += `<br><b>${quest.ask}</b><br>${quest.feedback.info}<br>${quest.feedback.location}<br>Attempts: ${quest.attempts}<br>`;
+      toReview.innerHTML += `<br><b>${quest.ask}</b><br>${quest.feedback.info}<br><em>${quest.feedback.location}</em><br><b>Attempts: ${quest.attempts}</b><br>`;
     }
   }
   if (unasked.innerHTML === "") {

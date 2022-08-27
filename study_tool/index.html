@@ -24,6 +24,15 @@
         frameborder="0"
       ></iframe>
     </div>
+    <form id="initMenu" onsubmit="chooseSubject()">
+      <label for="quiz-topic">Choose Quiz Topic</label>
+      <select name="quiz-topic" id="quiz-topic-select">
+        <option disabled selected value>-- select an option --</option>
+        <option value="./input_files/inputEMS.json">EMT-B General Prep</option>
+        <option value="TFD">EMS: Procedures & Patient Care Protocols - Pierce County WA</option>
+      </select>
+      <button type="submit" value="Submit">START</button>
+    </form>
     <a href="./quizFace.html"><button class="emergency" type="button">Test Run Me</button></a>
     <button id="emergency" type="button">if this is an emergency...</button>
     <footer>

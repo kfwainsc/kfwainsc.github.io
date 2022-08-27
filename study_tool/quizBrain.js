@@ -139,9 +139,9 @@ export class Quiz {
     if (this._attemptCount == 0 || this._correctCount == 0) {
       return 0;
     } else if (this._attemptCount < this._questList.length) {
-      return (this._correctCount / this._questList.length) * 100;
+      return Math.floor((this._correctCount / this._questList.length) * 100);
     } else {
-      return (this._correctCount / this._attemptCount) * 100;
+      return Math.floor((this._correctCount / this._attemptCount) * 100);
     }
   }
   restart() {
