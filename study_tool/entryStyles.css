@@ -1,9 +1,11 @@
 /********************************************
     by Kendra Wainscott 2022
+    project:  Study Tool
+
     styling for the LANDING PAGE of
     the "STUDY TOOL" quiz project
+    sheet organized alphabetically (after html)
 *********************************************/
-
 html {
   font-size: 16px;
   font-family: monospace;
@@ -13,7 +15,7 @@ html {
     font-size: 12px;
   }
 }
-
+/*******************************************/
 body {
   background-color: whitesmoke;
   display: flex;

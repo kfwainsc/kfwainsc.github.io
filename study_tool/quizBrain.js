@@ -1,5 +1,7 @@
 /***********************************************************
   by Kendra Wainscott 2022
+  project:  Study Tool
+
   Contains the QUESTION and QUIZ class implementations 
   for the "STUDY TOOL" quiz project.
   Quiz objects contain a list of questions, stats on

@@ -1,3 +1,10 @@
+/***********************************************************
+  by Kendra Wainscott 2022    
+  project:  Study Tool
+
+  file contains the impelementation of the quiz pages
+  itself and all interactions with the DOM
+************************************************************/
 const emergencyBtn = document.getElementById("emergency");
 emergencyBtn.addEventListener(
   "click",

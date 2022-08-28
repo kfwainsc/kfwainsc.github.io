@@ -1,3 +1,10 @@
+/***********************************************************
+  by Kendra Wainscott 2022    
+  project:  Study Tool
+
+  file contains the impelementation of the quiz pages
+  itself and all interactions with the DOM
+************************************************************/
 import {Question, Quiz} from "./quizBrain.js";
 //import rawQuizJSON from "./input_files/inputTFD.json" assert {type: "json"};
 
