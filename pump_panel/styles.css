@@ -12,7 +12,7 @@ html {
     font-size: 8px;
   }
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 580px) {
   html {
     font-size: 10px;
   }
@@ -23,13 +23,17 @@ html {
   }
 }
 body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
   font-family: Arial, Sans-Serif;
   background-color: black;
 }
 /*********** HEADER  *******************************/
 header h1 {
-  margin: 3rem;
-  font-size: 3rem;
+  margin: 4rem;
+  font-size: 4rem;
   font-weight: 700;
   text-align: center;
   letter-spacing: 0.2rem;
@@ -43,7 +47,8 @@ header h1 {
 }
 /*********** MAIN  **********************************/
 main {
-  min-height: 450px;
+  margin: 0 1rem;
+  /*min-height: 450px;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -85,7 +90,6 @@ main {
 }*/
 
 .neonwall h1 {
-  /*width: 100%;*/
   font-family: "Open Sans", Arial, Sans-Serif;
   position: relative;
   z-index: 100;
