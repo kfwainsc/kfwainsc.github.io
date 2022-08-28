@@ -8,6 +8,12 @@ html {
   font-size: 16px;
   font-family: monospace;
 }
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 body {
   background-color: whitesmoke;
   display: flex;
@@ -44,6 +50,12 @@ i {
   margin: 0.25rem;
   animation: stretch-heart 1.5s ease infinite alternate;
 }
+#initMenu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 @keyframes stretch-heart {
   0% {
     transform: scaleX(1.25) scaleY(1.25);
@@ -51,6 +63,14 @@ i {
   100% {
     transform: scaleX(0.9) scaleY(0.9);
   }
+}
+select {
+  font-size: 1rem;
+  text-align: center;
+}
+option {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 #time {
   display: none;

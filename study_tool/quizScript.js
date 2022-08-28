@@ -1,8 +1,8 @@
 import {Question, Quiz} from "./quizBrain.js";
 //import rawQuizJSON from "./input_files/inputTFD.json" assert {type: "json"};
 
-//const response = await fetch("./input_files/inputTFD.json");
-const response = await fetch("./input_files/inputEMS.json");
+//const response = await fetch("./input_files/inputPPCP.json");
+const response = await fetch("./input_files/inputNREMT.json");
 const rawQuizJSON = await response.json();
 
 // Load in questions and create quiz object
