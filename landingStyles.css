@@ -201,7 +201,7 @@ aside {
     transform: rotate(-360deg);
   }
 }
-.see-more h2 {
+#see-more {
   font-family: Arial, sans-serif;
   font-size: 1.1rem;
   text-align: center;
