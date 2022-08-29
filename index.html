@@ -58,7 +58,11 @@
         <div class="project-container">
           <a class="project-link" href="./study_tool/index.html" target="_blank">
             <figure>
-              <img class="project-img" src="./images/emsBagBright.jpg" alt="" />
+              <img
+                class="project-img"
+                src="./images/emsBagBright.jpg"
+                alt="Drawing of EMS trauma bag supplies layed out"
+              />
               <figcaption><h3>EMS Study Aid</h3></figcaption>
             </figure>
           </a>
@@ -94,6 +98,7 @@
           <a class="project-link" href="./pump_panel/index.html" target="_blank">
             <figure>
               <img
+                id="pump-img"
                 class="project-img"
                 src="./images/pumpPanelSquare.jpg"
                 alt="pump pannel of a fire engine"
@@ -110,11 +115,15 @@
           </div>
         </div>
       </div>
-      <aside>
-        <h2 id="see-more">to see more portfolio projects...</h2>
-        <a href="./local_pages/projects.html">
-          <button class="btn" type="button">click here</button>
-        </a>
+      <aside id="see-more">
+        <h2>to see more portfolio projects...</h2>
+        <button
+          id="see-more-btn"
+          type="button"
+          onclick="window.location.href='./local_pages/projects.html';"
+        >
+          click here
+        </button>
       </aside>
     </main>
 
