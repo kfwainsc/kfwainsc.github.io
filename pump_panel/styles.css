@@ -1,3 +1,12 @@
+/** STYLES.CSS **/
+/***********************************************************
+  by Kendra Wainscott 2022 
+  project:  TEMP pump panel
+
+    This style sheet is organized by major section and 
+    then alphabetically, with relevant media queries at 
+    the end of each section.
+/***********************************************************/
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap");
 * {
   margin: 0;

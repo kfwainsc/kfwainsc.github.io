@@ -7,3 +7,5 @@ Avaible to try at https://kfwainsc.github.io/
 
 Showcase of various projects at different stages of development.
 All projects are screen size responsive and scale accordingly along with the addition or subtraction of content as needed to maintain a clean design and intuitive user experience.
+
+This portfolio pages itselft is built with HTML, CSS, JS and a little bootstrap

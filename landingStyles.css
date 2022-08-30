@@ -1,3 +1,4 @@
+/** LANDINGSTYLES.CSS **/
 /***********************************************************
   by Kendra Wainscott 2022 
   project:  portfolio projects 
@@ -5,6 +6,12 @@
     Main style sheet, used for the landing page of the 
     portfolio website and inherited by subsequent  
     pages of the portfolio 
+
+    This style sheet is organized by major section and 
+    then alphabetically, with relevant media queries at 
+    the end of each section.
+/***********************************************************/
+
 /***********************************************************/
 * {
   margin: 0;

@@ -1,11 +1,14 @@
 /* TESTIMONIALS.CSS */
-nav {
-  z-index: 1;
-}
-main {
-  z-index: 2;
-}
-/****** GRID of QUOTES ************/
+/***********************************************************
+  by Kendra Wainscott 2022 
+  project:  Pride Hoof Care
+
+    Seconday style sheet, used only for TESTIMONIALS page 
+    
+    This style sheet is organized by major section and 
+    then alphabetically, with relevant media queries at 
+    the end of each section.
+/***********************************************************/
 blockquote {
   display: flex;
   flex-direction: column;
@@ -17,11 +20,18 @@ blockquote {
   background-color: antiquewhite;
 }
 .grid {
+  /** grid of quotes **/
   display: grid;
   margin: 2rem 2rem;
   position: relative;
   gap: 2rem;
   grid-template: repeat(2, 1fr) / repeat(2, 1fr);
+}
+main {
+  z-index: 2;
+}
+nav {
+  z-index: 1;
 }
 span {
   display: flex;

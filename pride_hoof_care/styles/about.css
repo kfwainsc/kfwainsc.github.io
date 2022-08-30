@@ -1,4 +1,15 @@
 /* ABOUT.CSS */
+/***********************************************************
+  by Kendra Wainscott 2022 
+  project:  Pride Hoof Care
+
+    Seconday style sheet, used only for ABOUT page 
+    
+    This style sheet is organized by major section and 
+    then alphabetically, with relevant media queries at 
+    the end of each section.
+/***********************************************************/
+
 nav {
   z-index: 1;
 }
@@ -12,7 +23,6 @@ img {
 }
 img:hover {
   max-width: 110%;
-  border: 0.5rem dashed darkgrey;
 }
 .grid-about {
   display: grid;
@@ -20,7 +30,7 @@ img:hover {
   position: relative;
   gap: 1rem 2rem;
   align-items: center;
-  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
 }
 p {
   line-height: 1.5rem;
@@ -30,7 +40,7 @@ p::first-letter {
 }
 @media only screen and (max-width: 480px) {
   .grid-about {
-    grid-template: repeat(6, 1fr) / repeat(2, 1fr);
+    grid-template: repeat(3, 1fr) / repeat(2, 1fr);
   }
   .hide-mobile {
     display: none;

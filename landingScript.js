@@ -1,3 +1,10 @@
+// LANDINGSCRIPT.JS //
+/***********************************************************
+  by Kendra Wainscott 2022    
+  project:  Portfolio Project
+
+************************************************************/
+
 // need imporvement
 // will not resize again if width changes
 if (screen.width <= 480) {

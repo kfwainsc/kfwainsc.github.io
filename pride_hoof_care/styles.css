@@ -1,4 +1,17 @@
-/************ UNIVERSAL **********************************************/
+/** STYLES.CSS **/
+/***********************************************************
+  by Kendra Wainscott 2022 
+  project:  Pride Hoof Care
+
+    Primary style sheet, used for the landing page  
+    and inherited by subsequent local pages 
+    
+    This style sheet is organized by major section and 
+    then alphabetically, with relevant media queries at 
+    the end of each section.
+/***********************************************************/
+
+/************ UNIVERSAL ************************************/
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +21,7 @@ body {
   display: inline-block;
 }
 html {
-  font-size: 12px;
+  font-size: 14px;
   font-family: Verdana, Helvetica, sans-serif;
   color: rgb(121, 121, 121);
   background-color: whitesmoke;
@@ -22,37 +35,55 @@ h4,
 h5 {
   font-weight: 500;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 300px) {
   html {
     font-size: 10px;
   }
 }
-/* sm (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
+@media only screen and (max-width: 480px) {
   html {
     font-size: 12px;
   }
-}
-/* med (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  html {
-    font-size: 14px;
+  body {
+    min-height: 500px;
   }
 }
-/* lrg (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
+@media only screen and (min-width: 768px) {
   html {
     font-size: 16px;
   }
 }
-/* xl (lrg laptops/desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 992px) {
   html {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 /********************************************************************/
 /****** HEADER ******************************************************/
+.fa-instagram,
+.fa-tiktok {
+  margin: 0 0.2rem;
+  font-size: 2.25rem;
+  text-decoration: none;
+  color: darkgray;
+}
+.fa-instagram:hover,
+.fa-tiktok:hover {
+  color: rgb(128, 128, 128);
+}
+.fa-social-media {
+  display: flex;
+  justify-content: space-evenly;
+}
+.h-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.h-container h1 {
+  font-size: 3rem;
+}
 nav {
   position: fixed;
   width: 100%;
@@ -61,16 +92,15 @@ nav {
   background-color: antiquewhite;
 }
 .nav {
-  margin-right: 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 .nav-links-container {
+  padding: 1rem 1rem 1rem 2rem;
   display: flex;
   align-content: center;
-  justify-content: center;
-  padding: 1rem 2rem;
+  justify-content: space-between;
 }
 .navOptions {
   font-weight: 500;
@@ -79,6 +109,9 @@ nav {
   margin: 0 1rem;
   border: 0.3rem double rgba(169, 169, 169, 0.3);
   border-radius: 0.75rem;
+  font-size: 1.25rem;
+  font-weight: 500;
+  text-decoration: none;
   color: gray;
 }
 .navOptions:hover {
@@ -86,83 +119,62 @@ nav {
   opacity: 0.8;
   background-color: rgba(169, 169, 169, 0.2);
 }
-.social-media {
-  display: flex;
-  justify-content: center;
-}
-.h-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.fa-instagram,
-.fa-tiktok {
-  font-size: 2.25rem;
-  margin-left: 0.75rem;
-  text-decoration: none;
-  color: darkgray;
-}
-.fa-instagram:hover,
-.fa-tiktok:hover {
-  color: rgb(128, 128, 128);
-}
 
-@media only screen and (max-width: 300px) {
+@media only screen and (max-width: 320px) {
+  .h-container {
+    padding-top: 22%;
+  }
+  .nav-links-container {
+    padding: 1rem 0.25rem;
+  }
+  .navOptions {
+    margin: 0rem;
+    padding: 0.25rem;
+    font-size: 1rem;
+  }
+}
+@media only screen and (min-width: 301px) {
   .h-container {
     padding-top: 20%;
   }
-  .nav {
-    margin-right: 0.5rem;
-  }
-
-  .navOptions {
-    padding: 0.5rem 0.5rem;
-    margin: 0 0.25rem;
-  }
-}
-@media only screen and (max-width: 480px) {
-  .h-container {
-    padding-top: 16%;
-  }
-  .nav {
-    margin-right: 1rem;
+  .nav-links-container {
+    padding: 1rem 0.25rem;
   }
   .navOptions {
-    padding: 0.25rem 0.5rem;
+    font-size: 1.2rem;
     margin: 0 0.25rem;
   }
 }
 @media only screen and (min-width: 481px) {
+  .fa-instagram,
+  .fa-tiktok {
+    margin: 0 1rem;
+  }
   .h-container {
     padding-top: 15%;
   }
   .nav {
     margin-right: 1rem;
+    justify-content: space-between;
   }
   .navOptions {
     padding: 0.25rem 0.5rem;
-    margin: 0 0.25rem;
   }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 650px) {
   .h-container {
-    padding-top: 10%;
+    padding-top: 12%;
+  }
+  .nav {
+    margin: 0 4rem;
+  }
+  .navOptions {
+    margin: 0 0.7rem;
   }
 }
 
 /********************************************************************/
 /******  MAIN    ****************************************************/
-main {
-  padding-bottom: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-figcaption {
-  text-align: end;
-}
 .anvil {
   max-width: 100%;
   height: auto;
@@ -170,18 +182,39 @@ figcaption {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.32), 0 6px 20px 0 rgba(0, 0, 0, 0.372);
 }
 
+figcaption {
+  margin: 0.4rem;
+  padding: 0 1rem 0 0;
+  text-align: end;
+}
+main {
+  padding-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+main h2 {
+  margin: 1rem;
+  font-size: 2rem;
+}
+main h3 {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
 @media only screen and (max-width: 480px) {
-  fig {
-    margin: 1rem;
+  figure {
+    margin: 5rem 2rem 4rem 2rem;
   }
 }
 @media only screen and (min-width: 481px) {
-  fig {
-    margin: 1rem 3rem;
+  figure {
+    margin: 3rem 3rem 2rem 3rem;
   }
 }
 @media only screen and (min-width: 768px) {
-  fig {
+  figure {
     margin: 2rem 5rem;
   }
 }
@@ -214,33 +247,3 @@ footer h4 {
 
 /********************************************************************/
 /********************************************************************/
-
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 10px;
-  }
-}
-/* sm (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 481px) {
-  html {
-    font-size: 14px;
-  }
-}
-/* med (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-/* lrg (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-  html {
-    font-size: 16px;
-  }
-}
-/* xl (lrg laptops/desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {
-  html {
-    font-size: 20px;
-  }
-}

@@ -1,7 +1,46 @@
-/* CONTACTS.CSS */
-nav {
-  z-index: 1;
+/** CONTACT.CSS **/
+/***********************************************************
+  by Kendra Wainscott 2022 
+  project:  Pride Hoof Care
+
+    Seconday style sheet, used only for CONTACT page 
+    
+    This style sheet is organized by major section and 
+    then alphabetically, with relevant media queries at 
+    the end of each section.
+/***********************************************************/
+body {
+  width: 100%;
+}
+#eli {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 1.75rem;
+  line-height: 3rem;
+}
+h3 {
+  margin: 1.2rem 0;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  text-align: center;
+}
+.h-container {
+  margin: 5rem 0 3rem 0;
 }
 main {
   z-index: 2;
+  margin: 3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+nav {
+  z-index: 1;
+}
+@media only screen and (max-width: 480px) {
+  main {
+    margin: 3rem 0 5rem 0;
+  }
 }
