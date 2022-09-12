@@ -14,7 +14,7 @@
   box-sizing: border-box;
 }
 html {
-  font-size: 16px;
+  font-size: 14px;
 }
 @media only screen and (max-width: 300px) {
   html {
@@ -28,7 +28,7 @@ html {
 }
 @media only screen and (min-width: 800px) {
   html {
-    font-size: 20px;
+    font-size: 16px;
   }
 }
 body {
@@ -41,8 +41,8 @@ body {
 }
 /*********** HEADER  *******************************/
 header h1 {
-  margin: 4rem;
-  font-size: 4rem;
+  margin: 3rem 0 2rem 0;
+  font-size: 3rem;
   font-weight: 700;
   text-align: center;
   letter-spacing: 0.2rem;
@@ -54,14 +54,63 @@ header h1 {
     margin: 5rem 3rem 0 3rem;
   }
 }
+@media only screen and (min-width: 600px) {
+  header h1 {
+    font-size: 3rem;
+  }
+}
+
 /*********** MAIN  **********************************/
-main {
-  margin: 0 1rem;
-  min-height: 350px;
+.btn {
+  cursor: pointer;
+  margin: 0.5rem 0 3rem 0;
+  padding: 0.6rem 1.2rem;
+  font-size: 1.4rem;
+  /*font-weight: 500;*/
+  line-height: 2rem;
+  color: mistyrose;
+  background-color: rgba(255, 68, 0, 0.629);
+  border-radius: 0.5rem;
+  border-width: 0 0.1rem 0.2rem 0;
+  border-color: rgba(0, 0, 0, 0.527);
+  transition: 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  transition-property: color, background-color, border-color;
+}
+.btn:hover {
+  color: rgb(172, 171, 171);
+  background-color: rgba(139, 42, 6, 0.629);
+}
+@media only screen and (max-width: 600px) {
+  .btn {
+    margin: 0.5rem 0 0 0;
+    padding: 1.25rem 1.25rem;
+    font-size: 2.25rem;
+    border-radius: 0.8rem;
+    border-width: 0 0.3rem 0.4rem 0;
+  }
+}
+.flex-center {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.gov {
+  margin: 1rem 0 0 0;
+  font-size: 1rem;
+  text-align: center;
+  color: mistyrose;
+  opacity: 0.3;
+}
+@media only screen and (max-width: 600px) {
+  .gov {
+    margin: 5rem 0 0 0;
+    font-size: 1.5rem;
+  }
+}
+.neon-contain {
+  margin: 0 1rem;
+  min-height: 350px;
   background-color: black;
   background-image: linear-gradient(#62000033, black), url("pump_images/maltese-cross-generic.png");
   background-repeat: no-repeat;
@@ -69,7 +118,6 @@ main {
   background-position: center;
 }
 .neonwall {
-  /*min-height: 20rem;*/
   max-width: 100%;
   display: flex;
   justify-content: center;
