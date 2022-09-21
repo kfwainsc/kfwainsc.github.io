@@ -39,28 +39,16 @@
       }
     },
     {
-      "ask": "What should you do when assessing a responsive adult patient with possible cardiac compromise?",
-      "options": [
-        "Apply high concentration oxygen.",
-        "Begin CPR, starting with respirations.",
-        "Check vitals and ventilate the patient",
-        "Attach and apply and AED immediately."
-      ],
-      "feedback": {
-        "info": "Apply high concentration oxygen when assessing a responsive adult patient with possible cardiac compromise.",
-        "location": "See Pg __,  Resource document tbd"
-      }
-    },
-    {
       "ask": "ROSC Has been achieved in a patient. What does this mean?",
       "options": [
         "Patient regained consciousness",
         "Patient's oxygen has normalized",
-        "Patient is taking spontaneous breaths"
+        "Patient is taking spontaneous breaths",
+        "Patient has a pulse"
       ],
       "feedback": {
-        "info": "ROSC Has been achieved when if a patient has regained consciousness",
-        "location": "ROSC: Return of Spontaneous Consciousness"
+        "info": "ROSC Has been achieved when if a patient has a pulse. A patient who was unresponsive and without pulse regains circulation or a pulse during the course of BLS, CPR, and/or AED ",
+        "location": "ROSC: Return of Spontaneous Circulation"
       }
     },
     {
