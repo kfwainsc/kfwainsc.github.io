@@ -1,8 +1,8 @@
-### Project: Portfolio Projects - Full Stack
+## Portfolio of Full Stack Development work
 
-#### by Kendra Wainscott 2022
+### by Kendra Wainscott 2022
 
-## Portfollio Projects Overview
+#### Portfollio Projects Overview
 
 **Avaible to try at [kfwainsc.github.io](https://kfwainsc.github.io/ "portfolio page hosted and updated through gitpages")**
 
@@ -11,4 +11,4 @@ All projects are screen size responsive and scale accordingly along with the add
 
 The portfolio page itself is built with HTML, CSS, JS and a little bootstrap
 
-![Screen shot preview of landing page](./images/landingPagePreview.jpg "Landing Page Screenshot")
+![Screen shot preview of landing page](/images/landingPagePreview.jpg "Landing Page Screenshot")
