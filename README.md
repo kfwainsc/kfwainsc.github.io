@@ -11,4 +11,6 @@ All projects are screen size responsive and scale accordingly along with the add
 
 The portfolio page itself is built with HTML, CSS, JS and a little bootstrap
 
-![Screen shot preview of landing page](/images/landingPagePreview.jpg "Landing Page Screenshot")
+![Desktop Screen shot preview of landing page](/images/landingPagePreview.jpg "Desktop Landing Page Screenshot")
+
+![Mobile Screen shot preview of landing page](/images/landingPagePreviewMOBILE.jpg "Mobile Landing Page Screenshot")
