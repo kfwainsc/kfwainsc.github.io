@@ -13,6 +13,6 @@ The portfolio page itself is built with HTML, CSS, JS and a little bootstrap
 
 <img src="/images/landingPagePreview.jpg" width=75% height=75% alt="Desktop Screen shot preview of landing page" title="Desktop Landing Page Screenshot">
 
-<img src="/images/landingPagePreviewMOBILE.jpg" width=50% height=50% alt="Mobile Screen shot preview of landing page" title="Mobile Landing Page Screenshot">
+<img src="/images/landingPagePreviewMOBILE.jpg" width=100 height=100 alt="Mobile Screen shot preview of landing page" title="Mobile Landing Page Screenshot">
 
-<img src="/images/landingPagePreviewMOBILE2.png" width=50% height=50% alt="Mobile Screen shot preview of about me page" title="Mobile About Me Page Screenshot">
+<img src="/images/landingPagePreviewMOBILE2.png" width=25% height=25% alt="Mobile Screen shot preview of about me page" title="Mobile About Me Page Screenshot">
