@@ -41,10 +41,10 @@
     {
       "ask": "ROSC Has been achieved in a patient. What does this mean?",
       "options": [
+        "Patient has a pulse",
         "Patient regained consciousness",
         "Patient's oxygen has normalized",
-        "Patient is taking spontaneous breaths",
-        "Patient has a pulse"
+        "Patient is taking spontaneous breaths"
       ],
       "feedback": {
         "info": "ROSC Has been achieved when if a patient has a pulse. A patient who was unresponsive and without pulse regains circulation or a pulse during the course of BLS, CPR, and/or AED ",
