@@ -3,13 +3,36 @@
 /************************************************************/
 @import url(https://fonts.googleapis.com/css?family=Oswald);
 main {
-  padding: 8rem 0 4rem 0;
-  background-color: white;
+  padding: 5rem 0 0 0;
+  background-color: #ffff;
+}
+#grid-projects {
+  margin-top: 5rem;
+  grid-template: repeat(1, 1fr) / repeat(4, 1fr);
+}
+@media only screen and (max-width: 650px) {
+  #grid-projects {
+    grid-template: repeat(3, 1fr) / repeat(1, 1fr);
+  }
+}
+section {
+  padding: 3rem 0;
+  background-color: black;
+}
+.ghost {
+  padding: 1rem 0;
+  text-shadow: 5px 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+  letter-spacing: 1rem;
+}
+.ghost,
+.ghostly {
+  font: bold 4rem "Oswald", "Helvetica", "sans-serif";
+  text-align: center;
+  color: #ffff;
 }
 .ghostly {
-  color: #fff;
-  text-align: center;
-  font: bold 5rem "Oswald", "Helvetica", "sans-serif";
+  padding: 2rem 0;
+  background-color: #ffff;
 }
 .ghostly span {
   display: inline-block;
