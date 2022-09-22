@@ -1,4 +1,4 @@
-## Project: Study Tool
+## Study Tool
 
 ### by Kendra Wainscott 2022
 
