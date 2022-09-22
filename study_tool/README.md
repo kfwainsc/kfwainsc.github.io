@@ -1,7 +1,8 @@
-##Project: Study Tool
-###by Kendra Wainscott 2022
+## Project: Study Tool
 
-####Study Tool Overview
+### by Kendra Wainscott 2022
+
+#### Study Tool Overview
 
 Avaible to try: [Study Tool](https://kfwainsc.github.io/study_tool/index.html "hosted and updated through gitpages")
 
