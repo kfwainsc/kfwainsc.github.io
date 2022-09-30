@@ -17,11 +17,23 @@
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  display: inline-block;
-}
 html {
-  font-size: 14px;
+  font-size: 12px;
+}
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 10px;
+  }
+}
+@media only screen and (min-width: 1000px) {
+  html {
+    font-size: 14px;
+  }
+}
+/************ BODY ******************************************/
+body {
+  position: relative;
+  text-align: center;
   font-family: Verdana, Helvetica, sans-serif;
   color: rgb(121, 121, 121);
   background-color: whitesmoke;
@@ -35,31 +47,17 @@ h4,
 h5 {
   font-weight: 500;
 }
-@media only screen and (max-width: 300px) {
-  html {
-    font-size: 10px;
-  }
+.flex-even {
+  /* wraps nav, main & foot */
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 12px;
-  }
-  body {
-    min-height: 500px;
-  }
-}
-@media only screen and (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-/*@media only screen and (min-width: 1200px) {
-  html {
-    font-size: 18px;
-  }
-}*/
+
 /********************************************************************/
-/****** HEADER ******************************************************/
+/******  NAV   ******************************************************/
 .fa-instagram,
 .fa-tiktok {
   margin: 0 0.2rem;
@@ -69,29 +67,11 @@ h5 {
 }
 .fa-instagram:hover,
 .fa-tiktok:hover {
-  color: rgb(128, 128, 128);
+  color: rgb(181, 12, 12);
 }
 .fa-social-media {
   display: flex;
-  justify-content: space-evenly;
-}
-.h-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  text-align: center;
-}
-.h-container h1 {
-  font-size: 3rem;
-  line-height: 5rem;
-}
-.h-container h2 {
-  line-height: 2rem;
-}
-.h-container h3 {
-  margin: 2rem 0;
-  line-height: 2rem;
+  justify-content: space-between;
 }
 nav {
   position: fixed;
@@ -101,21 +81,13 @@ nav {
   background-color: antiquewhite;
 }
 .nav {
+  padding: 0.5rem 0.5rem;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
-}
-.nav-links-container {
-  padding: 1rem 1rem 1rem 2rem;
-  display: flex;
-  align-content: center;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 .nav-options {
-  font-weight: 500;
-  text-decoration: none;
   padding: 0.5rem 1rem;
-  margin: 0 1rem;
   border: 0.3rem double rgba(169, 169, 169, 0.3);
   border-radius: 0.75rem;
   font-size: 1.25rem;
@@ -129,37 +101,8 @@ nav {
   background-color: rgba(169, 169, 169, 0.2);
 }
 @media only screen and (max-width: 360px) {
-  .h-container {
-    padding-top: 28%;
-  }
-  .nav-links-container {
-    padding: 1rem 0.1rem;
-    justify-content: space-evenly;
-  }
-  .nav-options {
-    margin: 0.2rem 0.2rem;
-    padding: 0.5rem 0.1rem;
-    font-size: 1rem;
-  }
-}
-@media only screen and (min-width: 361px) {
-  .h-container {
-    padding-top: 20%;
-  }
-  .nav-links-container {
-    padding: 1rem 0.25rem;
-  }
   .nav-options {
     font-size: 1rem;
-    padding: 0.5rem 0.4rem;
-    margin: 0 0.25rem;
-  }
-}
-@media only screen and (min-width: 400px) {
-  .nav-options {
-    margin: 0 0.4rem;
-    padding: 0.5rem 0.4rem;
-    font-size: 1.25rem;
   }
 }
 @media only screen and (min-width: 481px) {
@@ -167,44 +110,26 @@ nav {
   .fa-tiktok {
     margin: 0 1rem;
   }
-  .h-container {
-    padding-top: 15%;
-  }
-  .nav {
-    margin: 0 1rem;
-    justify-content: space-between;
-  }
-  .nav-options {
-    padding: 0.25rem 0.2rem;
-    font-size: 1rem;
-  }
 }
 @media only screen and (min-width: 600px) {
-  .h-container {
-    padding-top: 12%;
-  }
-  .nav {
-    margin: 0 1rem;
-  }
   .nav-options {
     margin: 0 0.7rem;
     padding: 0.5rem 1rem;
   }
 }
-@media only screen and (min-width: 800px) {
-  .h-container {
-    padding-top: 9%;
-  }
-  .h-container h3 {
-    margin: 1rem 0;
-    line-height: 2rem;
-  }
+/**********************************************************************/
+/******  HEADER   *****************************************************/
+h1 {
+  font-size: 3.5rem;
 }
-
+header {
+  margin: 7rem 0 3rem 0;
+}
 /********************************************************************/
 /******  MAIN    ****************************************************/
 .anvil {
-  max-width: 100%;
+  width: 100%;
+  max-width: 700px;
   height: auto;
   border-radius: 3rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.32), 0 6px 20px 0 rgba(0, 0, 0, 0.372);
@@ -225,40 +150,31 @@ main {
   justify-content: center;
 }
 main h2 {
-  margin: 1rem;
+  margin: 2rem 0 0.5rem 0;
   font-size: 2rem;
 }
 main h3 {
   font-size: 1.25rem;
-  text-align: center;
 }
 @media only screen and (max-width: 480px) {
   figure {
-    margin: 2rem 2rem;
+    margin: 0rem 2rem;
   }
 }
-@media only screen and (min-width: 481px) {
+@media only screen and (max-width: 800px) {
   figure {
-    margin: 3rem 3rem 2rem 3rem;
+    margin: 0rem 3rem;
   }
 }
-@media only screen and (min-width: 600px) {
-  figure {
-    margin: 1rem 5rem;
-  }
-}
-@media only screen and (min-width: 800px) {
-  figure {
-    margin: 1rem 15rem;
-  }
-}
+
 /********************************************************************/
 /****** FOOTETR ****************************************************/
 footer {
-  font-size: 1rem;
+  width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  font-size: 1rem;
   border-top: 0.25rem double lightgray;
   background-color: antiquewhite;
 }
@@ -270,10 +186,13 @@ footer h4 {
 .fa-envelope {
   font-size: 1rem;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 500px) {
   footer {
-    margin-top: 3%;
-    font-size: 11px;
+    position: absolute;
+    bottom: 0;
+  }
+  .flex-even {
+    /* wraps nav, main & foot */
   }
 }
 

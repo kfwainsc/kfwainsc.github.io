@@ -140,7 +140,6 @@ figcaption h3 {
     margin: 0 5rem;
   }
 }
-
 @media only screen and (max-width: 480px) {
   #grid-projects {
     margin: 0 3rem;

@@ -12,17 +12,27 @@
 body {
   width: 100%;
 }
+/*.contain-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: flex-end;
+}*/
 #eli {
   font-size: 2rem;
 }
 .examples {
-  margin: 5rem 1rem 0rem 1rem;
+  margin: 3rem 1rem 0rem 1rem;
   font-size: larger;
   text-align: center;
 }
+footer {
+  position: absolute;
+  bottom: 0;
+}
 h2 {
   font-size: 1.75rem;
-  line-height: 3rem;
+  line-height: 2rem;
 }
 h3 {
   margin: 1.2rem 0;
@@ -35,10 +45,10 @@ h3 {
 }
 main {
   z-index: 2;
-  margin: 3rem 0;
+  margin: 3rem 0 0 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
 }
 nav {
