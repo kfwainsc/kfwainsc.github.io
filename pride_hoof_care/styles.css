@@ -47,15 +47,32 @@ h4,
 h5 {
   font-weight: 500;
 }
-.flex-even {
-  /* wraps nav, main & foot */
+.fill-space {
+  /* wraps all */
   min-height: 100vh;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background-color: antiquewhite;
 }
-
+.flex-even {
+  /* wraps main & foot */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background-color: whitesmoke;
+}
+@media only screen and (max-width: 525px) {
+  .fill-space {
+    justify-content: center;
+  }
+  .flex-even {
+  }
+}
 /********************************************************************/
 /******  NAV   ******************************************************/
 .fa-instagram,
@@ -105,6 +122,11 @@ nav {
     font-size: 1rem;
   }
 }
+@media only screen and (max-width: 525px) {
+  nav {
+    padding: 5rem 0 0 0;
+  }
+}
 @media only screen and (min-width: 481px) {
   .fa-instagram,
   .fa-tiktok {
@@ -124,6 +146,11 @@ h1 {
 }
 header {
   margin: 7rem 0 3rem 0;
+}
+@media only screen and (max-width: 525px) {
+  header {
+    margin: 3rem 0 3rem 0;
+  }
 }
 /********************************************************************/
 /******  MAIN    ****************************************************/
@@ -186,15 +213,12 @@ footer h4 {
 .fa-envelope {
   font-size: 1rem;
 }
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 525px) {
   footer {
     position: absolute;
     bottom: 0;
-  }
-  .flex-even {
-    /* wraps nav, main & foot */
+    padding: 0 0 5rem 0;
   }
 }
-
 /********************************************************************/
 /********************************************************************/
