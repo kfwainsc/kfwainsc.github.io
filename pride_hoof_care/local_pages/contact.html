@@ -9,9 +9,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!--
-        meta key words & descript???
-    -->
+    <link rel="icon" href="../imgs_hoofcare/horseshoeLogo.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -31,17 +29,16 @@
   </head>
 
   <body>
-    <header>
+    <div class="fill-space">
       <nav>
+        <h1 class="nav-label-mobile">Contact Information</h1>
         <div class="nav">
-          <div class="nav-links-container">
-            <a class="nav-options" title="Home Page" href="../index.html">Home</a>
-            <a class="nav-options" title="Client Testimonials" href="./testimonials.html"
-              >Testimonials</a
-            >
-            <a class="nav-options" title="Contact Info" href="#">Contact</a>
-            <a class="nav-options" title="About Me" href="./about.html">About</a>
-          </div>
+          <a class="nav-options" title="Home Page" href="../index.html">Home</a>
+          <a class="nav-options" title="Client Testimonials" href="./testimonials.html"
+            >Testimonials</a
+          >
+          <a id="current-tab" class="nav-options" title="Contact Info" href="#">Contact</a>
+          <a class="nav-options" title="About Me" href="./about.html">About</a>
           <div class="fa-social-media">
             <a target="_blank" title="Instagram" href="https://www.instagram.com/gendereli/?hl=en"
               ><i class="fab fa-instagram fa-2x"></i
@@ -52,19 +49,36 @@
           </div>
         </div>
       </nav>
-      <div class="h-container">
-        <h1>Contact Information</h1>
+      <div class="flex-even">
+        <header>
+          <h1 class="hide-on-mobile-h1">Contact Information</h1>
+        </header>
+        <h1 class="eli">Eli B. Chisholm</h1>
+        <main>
+          <div class="anvil-outline-contain">
+            <img class="anvil-outline" src="../imgs_hoofcare/anvilOutline.png" />
+          </div>
+          <h2>Cell: 262-613-1499</h2>
+          <h3>to request an appointment<br />call or text Monday-Friday 8am to 6pm</h3>
+          <p class="examples">
+            Examples of Eli's work can be seen on both
+            <a
+              target="_blank"
+              title="Instagram"
+              href="https://www.instagram.com/gendereli/?hl=en>Instagram"
+              >Instagram</a
+            >
+            &
+            <a target="_blank" title="TicTok" href="https://www.tiktok.com/@pridehoofcare"
+              >TicTok</a
+            >
+          </p>
+        </main>
+        <footer>
+          <h4><i class="fa fa-phone"></i> Mon-Fri: 262-613-1499</h4>
+          <h4>P.O. Box 1706<br />Columbia Falls, MT 59912 USA</h4>
+        </footer>
       </div>
-    </header>
-    <main>
-      <h2 id="eli">Eli Chisholm</h2>
-      <h2>Cell: 262-613-1499</h2>
-      <h3>to request an appointment</br>call or text Monday-Friday 8am to 6pm</h3>
-      <p class="examples">Examples of Eli's work can be seen on both <a target="_blank" title="Instagram" href="https://www.instagram.com/gendereli/?hl=en>Instagram">Instagram</a> & <a target="_blank" title="TicTok" href="https://www.tiktok.com/@pridehoofcare">TicTok</a></p>
-    </main>
-    <footer>
-      <h4><i class="fa fa-phone"></i> Mon-Fri: 262-613-1499</h4>
-      <h4>P.O. Box 1706<br />Columbia Falls, MT 59912 USA</h4>
-    </footer>
+    </div>
   </body>
 </html>

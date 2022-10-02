@@ -9,70 +9,30 @@
     then alphabetically, with relevant media queries at 
     the end of each section.
 /***********************************************************/
-body {
+.anvil-outline {
   width: 100%;
+  filter: opacity(0.7);
 }
-/*.contain-center {
+.anvil-outline-contain {
   display: flex;
-  flex-direction: column;
+  max-width: 50%;
+  justify-content: center;
   align-items: center;
-  justify-items: flex-end;
-}*/
-#eli {
-  font-size: 2rem;
 }
 .examples {
   margin: 3rem 1rem 0rem 1rem;
-  font-size: larger;
-  text-align: center;
 }
-footer {
-  position: absolute;
-  bottom: 0;
+header {
+  margin: 2rem 0 0 0;
 }
-h2 {
-  font-size: 1.75rem;
-  line-height: 2rem;
-}
-h3 {
-  margin: 1.2rem 0;
-  font-size: 1.4rem;
-  line-height: 2rem;
-  text-align: center;
-}
-.h-container {
-  margin: 1rem;
-}
-main {
-  z-index: 2;
-  margin: 3rem 0 0 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.eli {
+  margin: 2rem;
 }
 nav {
   z-index: 1;
 }
-@media only screen and (max-width: 480px) {
-  main {
-    margin: 3rem 0 7rem 0;
-  }
-}
-@media only screen and (min-width: 600px) {
-  .examples {
-    margin: 3rem 1rem 0rem 1rem;
-  }
-  h2 {
-    line-height: 2.5rem;
-  }
-  h3 {
-    margin: 0;
-  }
-  .h-container {
-    margin: 1rem 0;
-  }
-  main {
-    margin: 0rem 0;
+@media only screen and (max-width: 525px) {
+  .eli {
+    letter-spacing: 0.2rem;
   }
 }

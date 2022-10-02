@@ -25,7 +25,7 @@ html {
     font-size: 10px;
   }
 }
-@media only screen and (min-width: 1000px) {
+@media only screen and (min-width: 1200px) {
   html {
     font-size: 14px;
   }
@@ -54,7 +54,7 @@ h5 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   background-color: antiquewhite;
 }
 .flex-even {
@@ -68,13 +68,19 @@ h5 {
 }
 @media only screen and (max-width: 525px) {
   .fill-space {
-    justify-content: center;
+    justify-content: flex-start;
   }
   .flex-even {
   }
 }
 /********************************************************************/
 /******  NAV   ******************************************************/
+#current-tab {
+  color: rgb(70, 70, 70);
+  border: 0.3rem double rgb(70, 70, 70);
+  background-color: rgba(169, 169, 169, 0.2);
+  opacity: 1;
+}
 .fa-instagram,
 .fa-tiktok {
   margin: 0 0.2rem;
@@ -98,10 +104,15 @@ nav {
   background-color: antiquewhite;
 }
 .nav {
-  padding: 0.5rem 0.5rem;
+  padding: 0.7rem 0.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.nav-label-mobile {
+  margin: 3rem 0 2rem 0;
+  display: none;
+  filter: opacity(0.3);
 }
 .nav-options {
   padding: 0.5rem 1rem;
@@ -112,7 +123,8 @@ nav {
   text-decoration: none;
   color: gray;
 }
-.nav-options:hover {
+.nav-options:hover,
+.nav-options:active {
   border: 0.3rem double rgba(169, 169, 169, 1);
   opacity: 0.8;
   background-color: rgba(169, 169, 169, 0.2);
@@ -122,21 +134,39 @@ nav {
     font-size: 1rem;
   }
 }
-@media only screen and (max-width: 525px) {
-  nav {
-    padding: 5rem 0 0 0;
-  }
-}
 @media only screen and (min-width: 481px) {
   .fa-instagram,
   .fa-tiktok {
     margin: 0 1rem;
   }
 }
+@media only screen and (max-width: 525px) {
+  nav {
+    position: relative;
+    /*padding: 3rem 0 0 0;*/
+  }
+  .nav-label-mobile {
+    display: inline-block;
+    filter: opacity(0.3);
+  }
+}
 @media only screen and (min-width: 600px) {
   .nav-options {
     margin: 0 0.7rem;
     padding: 0.5rem 1rem;
+  }
+}
+/* for low content pages && x-long screens */
+@media only screen and (min-height: 1000px) {
+  .hide-on-mobile-h1 {
+    display: none;
+  }
+  nav {
+    position: relative;
+  }
+  .nav-label-mobile {
+    display: inline-block;
+    filter: opacity(0.3);
   }
 }
 /**********************************************************************/
@@ -147,9 +177,15 @@ h1 {
 header {
   margin: 7rem 0 3rem 0;
 }
+.hide-on-mobile-h1 {
+  filter: opacity(0.3);
+}
 @media only screen and (max-width: 525px) {
   header {
     margin: 3rem 0 3rem 0;
+  }
+  .hide-on-mobile-h1 {
+    display: none;
   }
 }
 /********************************************************************/
@@ -215,9 +251,9 @@ footer h4 {
 }
 @media only screen and (max-width: 525px) {
   footer {
-    position: absolute;
+    /*position: absolute;
     bottom: 0;
-    padding: 0 0 5rem 0;
+    padding: 0 0 5rem 0;*/
   }
 }
 /********************************************************************/

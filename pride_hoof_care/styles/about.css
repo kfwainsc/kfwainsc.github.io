@@ -5,31 +5,28 @@
 
     Seconday style sheet, used only for ABOUT page 
     
-    This style sheet is organized by major section and 
-    then alphabetically, with relevant media queries at 
-    the end of each section.
+    This style sheet is organized by major section alphabetically, 
+    with relevant media queries at the end of each section.
 /***********************************************************/
-nav {
-  z-index: 1;
+.hide-on-mobile-h1 {
+  margin: 7rem 0 0 0;
 }
-main {
-  z-index: 2;
+
+.grid-about {
+  display: grid;
+  margin: 2rem 2rem; /**/
+  position: relative;
+  gap: 1rem 2rem;
+  align-items: center;
+  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
 }
 img {
   max-width: 90%;
   border-radius: 25%;
   border: 0.5rem double lightgray;
 }
-img:hover {
-  max-width: 110%;
-}
-.grid-about {
-  display: grid;
-  margin: 2rem 2rem;
-  position: relative;
-  gap: 1rem 2rem;
-  align-items: center;
-  grid-template: repeat(2, 1fr) / repeat(3, 1fr);
+nav {
+  z-index: 3;
 }
 p {
   line-height: 1.5rem;
@@ -37,7 +34,7 @@ p {
 p::first-letter {
   font-size: 1.5rem;
 }
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: 550px) {
   .grid-about {
     grid-template: repeat(3, 1fr) / repeat(2, 1fr);
   }
@@ -45,3 +42,26 @@ p::first-letter {
     display: none;
   }
 }
+/* Turn off universal 'low content fill space' for x-long screens */
+@media only screen and (min-height: 1000px) {
+  .hide-on-mobile-h1 {
+    display: inline-block;
+  }
+  nav {
+    position: fixed;
+  }
+  .nav-label-mobile {
+    display: none;
+  }
+}
+
+/* Turn off 'low content fill space' mobile styles 
+@media only screen and (max-width: 525px) {
+  header {
+    margin: 11rem 0 0 0;
+  }
+  footer {
+    position: relative;
+    padding: 0;
+  }
+}*/

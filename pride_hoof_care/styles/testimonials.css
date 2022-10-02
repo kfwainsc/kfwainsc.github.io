@@ -22,20 +22,13 @@ blockquote {
 .grid {
   /** grid of quotes **/
   display: grid;
-  margin: 2rem 2rem;
+  margin: 0 2rem;
   position: relative;
   gap: 2rem;
   grid-template: repeat(2, 1fr) / repeat(2, 1fr);
 }
-main {
-  z-index: 2;
-}
 nav {
-  z-index: 1;
-}
-span {
-  display: flex;
-  text-align: left;
+  z-index: 3;
 }
 .quote-open {
   font-size: 3.5rem;
@@ -50,8 +43,19 @@ span {
 .quote-line {
   line-height: 2rem;
 }
+span {
+  display: flex;
+  text-align: left;
+}
 @media only screen and (max-width: 480px) {
   .grid {
     grid-template: repeat(1, 1fr) / repeat(1, 1fr);
+  }
+}
+/* Turn off 'low content fill space' mobile styles */
+@media only screen and (max-width: 525px) {
+  footer {
+    position: relative;
+    padding: 0;
   }
 }
