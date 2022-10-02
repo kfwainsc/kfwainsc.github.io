@@ -21,18 +21,35 @@
 }
 .examples {
   margin: 3rem 1rem 0rem 1rem;
-}
-header {
-  margin: 2rem 0 0 0;
+  font-size: 1.75rem;
 }
 .eli {
   margin: 2rem;
+  font-size: 4rem;
+}
+header {
+  margin: 7rem 0 0 0;
+}
+.hours {
+  margin: 1rem;
+}
+main h3 {
+  font-size: 1.75rem;
 }
 nav {
   z-index: 1;
 }
+.phone {
+  font-size: 3rem;
+}
 @media only screen and (max-width: 525px) {
   .eli {
     letter-spacing: 0.2rem;
+  }
+  .examples {
+    font-size: 1.4rem;
+  }
+  header {
+    margin: 0;
   }
 }
